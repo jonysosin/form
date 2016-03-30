@@ -1,3 +1,7 @@
+@-ms-viewport{
+	width: device-width;
+}
+
 body,
 body.chat
 {
@@ -13,7 +17,12 @@ body.chat
 	text-align: center;
 	margin-top: 10%;
 
-	@media (max-width : 768 px)
+
+}
+
+@media (max-width : 768px)
+{
+	.logo
 	{
 		margin-top: 15px;
 	}
