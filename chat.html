@@ -1,0 +1,83 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Title of APP</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="chat">
+	<div class="content">
+		<div class="row">
+			<div class="container-chat col s10">
+				<div class="text-center">Hola
+					<span id="hello-user" class="text-center"></span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="container-chat col s10" style="margin-top: -23px;">
+				<div class="text-center" style="font-size: 20px">#
+					<span id="hashtag" class="text-center"></span>
+				</div>
+			</div>
+			<ul id="container-messages" style="display: block;width: 100%;text-align: left;float: left; padding-left: 15px">
+				<li id="to-clone" style="display: none">
+					<span class="user" style="font-weight: bold;">username</span> - <span class="message">Hola</span>
+				</li>
+			</ul>
+		</div>
+		<div class="row container-input-chat" style="">
+			<div class="input-field col s11 left">
+				<input placeholder="Message" id="message" type="text" class="validate" autocomplete="false" autofocus="true">
+				<!--<label for="first_name">First Name</label>-->
+			</div>
+			<div class="right">
+				<button id="add-message" class="btn waves-effect waves-light center" type="submit" style="margin-top: 17px;"><i class="fa fa-paper-plane"></i></button>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+
+<script>
+	function parse(val) {
+		var result = "Not found",
+				tmp = [];
+		location.search
+			//.replace ( "?", "" )
+			// this is better, there might be a question mark inside
+				.substr(1)
+				.split("&")
+				.forEach(function (item) {
+					tmp = item.split("=");
+					if (tmp[0] === val) result = decodeURIComponent(tmp[1]);
+				});
+		return result;
+	}
+
+	$(function() {
+		$('#hello-user').append(' ' + parse('user') + "!");
+		$('#hashtag').append(' ' + parse('hashtag'));
+
+		$('#add-message').click(function(){
+			if ($('#message').val())
+			{
+				var newMessage = $('#to-clone').clone();
+				newMessage.find('.message').text($('#message').val());
+				newMessage.find('.user').text('Jonathan');
+				newMessage.attr('id', '');
+
+				$('#container-messages').append(newMessage);
+
+				newMessage.fadeIn('slow');
+				$('#message').val('');
+			}
+		});
+	});
+</script>
+
+</html>

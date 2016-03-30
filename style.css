@@ -1,0 +1,88 @@
+body,
+body.chat
+{
+	background-color: black !important;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.logo
+{
+	color: white;
+	font-size: 50px;
+	font-weight: 800;
+	text-align: center;
+	margin-top: 100px;
+}
+
+input.input-black
+{
+	background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    outline: none;
+    padding-bottom: 15px;
+    text-align: center;
+    font-weight: bold !important;
+    color: white;
+	margin-top: -17px;
+}
+
+span#basic-addon1 {
+    background-color: transparent;
+    border: none;
+	float: left;
+	font-size: 24px;
+    color: white;
+}
+
+.container-down
+{
+	margin-top: 50px;
+}
+
+.second
+{
+	margin-top: 50px;
+}
+
+.container-chat
+{
+	height: auto;
+	background: white;
+}
+.container-input-chat
+{
+	height: 70px;
+	position: absolute;
+	bottom: 0;
+	background-color: black;
+	right: 0;
+	left: 0;
+	max-width: 100%; margin-bottom: 0;
+	padding-right: 15px;
+}
+
+body.chat
+{
+	overflow: hidden;
+	background: white;
+}
+
+.content
+{
+	background-color: white;
+	height: 100%;
+	padding-top: 20px;
+}
+
+#hello-user
+{
+	font-weight: 700;
+}
+
+#message
+{
+	color: white;
+	margin: 0 40px 0 40px;
+	padding: 0 10px 0 10px;
+}
