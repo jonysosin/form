@@ -43,6 +43,11 @@ span#basic-addon1 {
 .container-down
 {
 	margin-top: 50px;
+
+	@media (max-width : 768 px)
+	{
+		margin-top: 15px;
+	}
 }
 
 .second
