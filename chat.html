@@ -14,7 +14,7 @@
 	<div class="content">
 		<div class="row">
 			<div class="container-chat col s10">
-				<div class="text-center">Hola
+				<div class="text-center">Heyy
 					<span id="hello-user" class="text-center"></span>
 				</div>
 			</div>
@@ -70,7 +70,7 @@
 			{
 				var newMessage = $('#to-clone').clone();
 				newMessage.find('.message').text($('#message').val());
-				newMessage.find('.user').text('Jonathan');
+				newMessage.find('.user').text(parse('user'));
 				newMessage.attr('id', '');
 
 				$('#container-messages').append(newMessage);
