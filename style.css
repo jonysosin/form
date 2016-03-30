@@ -12,6 +12,11 @@ body.chat
 	font-weight: 800;
 	text-align: center;
 	margin-top: 10%;
+
+	@media (max-width : 768 px)
+	{
+		margin-top: 15px;
+	}
 }
 
 input.input-black
